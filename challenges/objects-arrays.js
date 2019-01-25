@@ -18,8 +18,8 @@ function Dinosaur(about) {
     this.weight = about.weight;
     this.length = about.length;
     this.period = about.period;
-    this.roar = function(sound) {
-      console.log("RAWERSRARARWERSARARARRRR!")
+    this.roar = function() {
+      return "RAWERSRARARWERSARARARRRR!";
     }
   }
 
@@ -65,7 +65,7 @@ console.log(tyr.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log(tyr.roar());
+console.log(tyr.roar())
 
 
 // ==== Arrays ====
@@ -138,10 +138,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
-   zooAnimals.forEach(function(zooAnimals) {
-    animalNames.push(`${zooAnimals.animal_name} ${zooAnimal.scientificName}`)
-   });
-
+    zooAnimals.forEach(function(zooAnimals){
+      animalNames.push(`${zooAnimals.animal_name} ${zooAnimals.state}`)
+    })
   console.log(animalNames);
 
 /* Request 2: .map()    
@@ -151,6 +150,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
+    zooAnimals.map(function(zooAnimals) {
+    lowerCase.push(zooAnimals.animal_name.toLowerCase());
+    })
 
 console.log(lowerCase); 
 
@@ -159,15 +161,26 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
-console.log(largerPopulation);
+// const largerPopulation = []
+// console.log(largerPopulation);
+
+// const lowerPopulation = [];
+//     lowerPopulation = zooAnimals.filter((animal_name)=> {
+//         return animal_name.population<5;
+//     })
+    
+// console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+let populationTotal = 0;
+populationTotal = zooAnimals.reduce((amount,currentValue)=> {
+  return amount + currentValue.population
+},0);
+
 console.log(populationTotal);
 
 
