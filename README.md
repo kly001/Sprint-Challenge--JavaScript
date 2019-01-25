@@ -37,6 +37,9 @@ A function is a piece of code that is called by name.  A method is a piece of co
 
 3. What is closure?
 
+closure is a feature in JavaScript where an inner function has access to the outer, enclosing function's variables.
+
+
 4. Describe the four rules of the 'this' keyword.
 
 Rule 1: Global(Window) Binding - the value of          'this' will be the window/console object.
@@ -49,7 +52,7 @@ Rule#4: Explicit Binding - the value of 'this' is defined whenever the bind, cal
 
 5. Why do we need super() in an extended class?
 
-super() is used to tell the parent 
+super() is used to access and call functions on an object's parent. 
 
 
 
